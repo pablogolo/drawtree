@@ -19,7 +19,12 @@
 
 #define MAXT 5000
 FILE * tfile , * namfile ; 
-int curnodin , atnt , nt , anc[2*MAXT] , lef[2*MAXT] , rig[2*MAXT] , sis[2*MAXT] , trylist[2*MAXT] , atlin[2*MAXT] , rho = 218 , el = 192 , vert = 179 , hor = 196 , side = 195 , cross = 197 , up = 193 , hook = 180 , linsdone ;
+int curnodin , atnt , nt , anc[2*MAXT] , lef[2*MAXT] , rig[2*MAXT] , sis[2*MAXT] , trylist[2*MAXT] , atlin[2*MAXT] , linsdone ; 
+#ifdef POORMAN
+int rho = ',' , el = '`' , vert = '|' , hor = '-' , side = '|' , cross = '+' , up = '-' , hook = '|' ; 
+#else 
+int rho = 218 , el = 192 , vert = 179 , hor = 196 , side = 195 , cross = 197 , up = 193 , hook = 180 ;
+#endif
 char names[ MAXT ] [ 150 ] , msg[ 2*MAXT ] [ 50 ] , tmpstr[ 150 ];
 int * retrop , * retrolim , retrolist[ MAXT ] , leglen[2*MAXT] , cladesize[2*MAXT] , usernames = 0 ; 
 
